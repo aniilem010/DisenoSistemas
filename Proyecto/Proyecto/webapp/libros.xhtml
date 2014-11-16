@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+
+</h:head>
+
+
+<h:body style="text-align:center">
+	<h:form>		
+		<p:dataTable 
+		    id="checkboxDT" 
+		    value="#{librosBean1.lib}"
+			var="libros"
+			selection="#{librosBean1.libS}"
+			rowKey="#{libros.id}" 
+			style="margin-bottom:0"
+			>
+			<f:facet name="header">Libros</f:facet>
+			<p:column headerText="Nombre">
+				<p:outputLabel value="#{libros.nom}" />
+			</p:column>
+			<p:column selectionMode="multiple"
+				style="width:16px;text-align:center" />
+			<f:facet name="footer">
+				<p:commandButton  process="checkboxDT" value="Comprar"  onclick="login.xhtml" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+
+</h:body>
+</html>

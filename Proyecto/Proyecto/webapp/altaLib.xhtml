@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body style="text-align:center">
+<p:growl id="mensajes" showDetail="true" life="2000" />
+  
+  
+    <br></br> <br></br> <br></br> <br></br> <br></br>
+    <center>
+    <br></br>
+    
+    <h:form>
+    
+    <br></br>
+    <p:panel header="Agregar Libros" style="width:350px">
+      <h:panelGrid columns="2" cellpadding="5">
+      
+        <h:outputLabel for="nombre_libro" value="Nombre libro:" />
+        <p:inputText value="#{altaLibro.nombre_libro}" id="nombre_libro"
+           required="true" label="nombre_libro" requiredMessage="Necesitas introducir el Nombre del libro" />
+        
+        <h:outputLabel for="autor" value="Autor:" />
+        <p:inputText value="#{altaLibro.autor}" id="autor"
+           required="true" label="autor" requiredMessage="Necesitas introducir el Nombre del autor"/>
+           
+        <h:outputLabel for="editorial" value="Editorial:" />
+        <p:inputText value="#{altaLibro.editorial}" id="editorial"
+         required="true" label="editorial" requiredMessage="Necesitas introducir la Editorial" />
+        
+         <h:outputLabel for="descripcion" value="Descripcion:" />
+         <p:inputText value="#{altaLibro.descripcion}" id="descripcion"
+          required="true" label="descripcion" requiredMessage="Necesitas introducir una descripcion" />
+         
+         <h:outputLabel for="precio" value="Precio:" />
+        <p:inputText value="#{altaLibro.precio}" id="precio"
+           required="true" label="precio" requiredMessage="Necesitas introducir el precio" />
+       
+       
+        <h:outputLabel for="cat_libro" value="Categoria:" />
+  <p:selectOneMenu id="console" value="#{altaLibro.cat_libro}">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Novela de terror" itemValue="1" />
+            <f:selectItem itemLabel="Suspenso" itemValue="2" />
+            <f:selectItem itemLabel="Novela" itemValue="3" />
+            <f:selectItem itemLabel="Biografia" itemValue="4" />
+            <f:selectItem itemLabel="Novela Historica" itemValue="5" />
+            <f:selectItem itemLabel="Calculo" itemValue="6" />
+            <f:selectItem itemLabel="Algebra" itemValue="7" />
+            <f:selectItem itemLabel="Autoestima" itemValue="8" />
+            <f:selectItem itemLabel="Historia" itemValue="9" />
+            <f:selectItem itemLabel="Filosofia" itemValue="10" />
+            <f:selectItem itemLabel="Computacion e informatica" itemValue="11" />
+            <f:selectItem itemLabel="Ciencia Ficcion" itemValue="12" />
+            <f:selectItem itemLabel="Relato" itemValue="13" />
+            <f:selectItem itemLabel="Comic" itemValue="14" />
+            
+        </p:selectOneMenu>
+ 
+        <f:facet name="footer">
+          <p:commandButton id="AltaButton1" value="Aceptar" onclick="menuAdmin.xhtml"
+             action="#{altaLibro.altaLib}" update=":mensajes"  /> 
+        </f:facet>
+      </h:panelGrid>
+    </p:panel>
+    
+  </h:form>
+  </center>
+	
+</h:body>
+
+
+</html>

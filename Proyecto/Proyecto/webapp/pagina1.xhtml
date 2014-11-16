@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>LIBRERIA</title>
+</h:head>
+<h:body style="text-align:center">
+
+
+ 
+<h:form>
+
+
+  <p:panel id="basic" header="Libreria" footer="Contacto" style="margin-bottom:20px">
+        <h:panelGrid columnClasses="column1,column2,column3" columns="2"  style="width:150%" cellpadding="15">
+          
+              
+        <p:column>
+             <h:form>
+    			<p:menu toggleable="true">
+        			<p:submenu label="Usuarios Registrados" value="#{LoginBean.per}">    					
+            			<p:menuitem value="Administrador" url="loginAdmin.xhtml" />
+            			<p:menuitem value="Cliente" url="login.xhtml"/>
+            	<p:submenu label="Registrar nuevo usuario" displayed="#"> 
+            			<p:menuitem value="Crear cuenta" url="altaU.xhtml"/>
+            			</p:submenu>
+        			</p:submenu>           
+   			  </p:menu>
+            </h:form>              
+       </p:column> 
+             
+       <p:column>
+                        
+	               <p:carousel itemStyle="width: 550px; height: 450px; position: right;" itemStyleClass="carItem" pageLinks="4" autoPlayInterval="3000" numVisible="1"    effect="easeInStrong" circular="true"> 
+		                <p:graphicImage value="/Imagenes/uno.jpg"/>
+		                <p:graphicImage value="/Imagenes/dos.jpg"/>
+		                <p:graphicImage value="/Imagenes/tres.jpg"/>
+		                <p:graphicImage value="/Imagenes/cuatro.jpg"/>
+		                <p:graphicImage value="/Imagenes/cinco.jpg"/>	                
+	       	 	  </p:carousel>                                
+              
+      </p:column>     
+    
+      
+                
+                       
+   </h:panelGrid>
+ </p:panel>
+</h:form>  
+</h:body>
+</html>

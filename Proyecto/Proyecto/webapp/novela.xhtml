@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>LIBRERIA</title>
+</h:head>
+<h:body style="text-align:center">
+
+
+ 
+<h:form>
+
+
+  <p:panel id="basic" header="Libreria" footer="Contacto" style="margin-bottom:20px">
+        <h:panelGrid columnClasses="column1,column2,column3" columns="2"  style="width:150%" cellpadding="15">
+          
+              
+        <p:column>
+             <h:form>
+             <p:menu toggleable="true">
+    			 <p:submenu label="Categorias">
+           				 <p:menuitem value="Novela de Terror" url="novela_terror.xhtml"/>
+	           				  <p:menuitem value="Suspenso" url="suspenso.xhtml"/>
+	           				  <p:menuitem value="Novela" url="novela.xhtml"/>
+	           				  <p:menuitem value="Biografia" url="biografia.xhtml"/>
+	           				  <p:menuitem value="Novela Historica" url="novela_historica.xhtml"/>
+	           				  <p:menuitem value="Calculo" url="calculo.xhtml"/>
+	           				  <p:menuitem value="Algebra" url="algebra.xhtml"/>
+	           				  <p:menuitem value="Autoestima" url="autoestima.xhtml"/>
+	           				  <p:menuitem value="Historia" url="historia.xhtml"/>
+	           				  <p:menuitem value="Filosofia" url="filosofia.xhtml"/>
+	           				  <p:menuitem value="Computacion e Informatica" url="comp_inf.xhtml"/>
+	           				  <p:menuitem value="Ciencia Ficcion" url="ciencia_ficcion.xhtml"/>
+	           				  <p:menuitem value="Relato" url="relato.xhtml"/>
+	           				  <p:menuitem value="Comic" url="comic.xhtml"/>
+         			</p:submenu>
+   			  </p:menu>
+            </h:form>              
+       </p:column> 
+             
+       <p:column>              
+	       <h:dataTable value="#{novela.rs}" var="libros" border="5"  style="width:800px"  >  
+	      		 <h:column headerText="Nombre">        
+      				 <f:facet name="header">       
+   							  Nombre
+       				</f:facet>        	
+        					<h:outputText value="#{libros.nombre_libro}"/>   
+        					<!--   <p:commandButton id="compra" value="Comprar" />      --> 	
+        		</h:column>       
+        		<h:column headerText="">        
+           			<f:facet name="header">      
+    						Precio
+    		       </f:facet>       	
+        					<h:outputText value="$#{libros.precio}.00"/>        	
+       			 </h:column>   
+       			 <h:column headerText="Precio">        
+           			  
+    		       			 <p:commandButton align="center" id="Editar" value="Editar"/> 
+    		       			 <p:commandButton align="center" id="Comprar" value="Comprar"/>      	
+        					 <p:commandButton align="center" id="AltaButton" value="Aceptar"  />       	
+       			 </h:column>           
+   		 </h:dataTable>                          
+      </p:column>                            
+   </h:panelGrid>
+ </p:panel>
+</h:form>  
+</h:body>
+</html>
